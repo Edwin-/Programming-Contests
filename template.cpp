@@ -21,7 +21,7 @@ typedef unsigned long long uLL;
 
 #define EPS (1e-9)
 #define PI acos(-1)
-#define oo (1<<30)
+#define INF (1<<30)
 
 int main(){
        
