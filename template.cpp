@@ -20,14 +20,14 @@ using namespace std;
 typedef long long   LL;
 typedef unsigned long long uLL;
 
-const double EPS = 1e-10;
+const double EPS = 1e-10; // 1e-9;
 const double PI  = acos(-1.0);
+
+int cmp(double x, double y = 0, double tol = EPS) {
+    return (x <= y + tol) ? (x + tol < y) ? -1 : 0 : 1;
 
 int main(){
        	ios_base::sync_with_stdio(0);
-
-
-
 
         return 0;
 }
