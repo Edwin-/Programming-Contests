@@ -22,6 +22,12 @@ import java.io.InputStream;
 
 public class template {
 
+    static final double EPS = 1.e-10;
+
+    private static int cmp(double x, double y = 0, double tol = EPS) {
+        return (x <= y + tol) ? (x + tol < y) ? -1 : 0 : 1; 
+    }
+
     public static void main(String[] args) {
 
         InputStream inputStream = System.in;
@@ -41,11 +47,9 @@ public class template {
 
     }
 
-
     static class FastScanner {
         public BufferedReader br;
         public StringTokenizer st;
-
         
         public FastScanner(InputStream is) {
             br = new BufferedReader(new InputStreamReader(is));
@@ -58,7 +62,6 @@ public class template {
                 e.printStackTrace();
             }
         }
-
 
         public String next() {
             try {
