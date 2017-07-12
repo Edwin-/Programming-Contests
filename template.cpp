@@ -5,7 +5,29 @@
  * Problem:
  *****************************************************************************/
 
-#include <bits/stdc++.h>
+#include <vector>
+#include <list>
+#include <map>
+#include <set>
+#include <deque>
+#include <stack>
+#include <bitset>
+#include <algorithm>
+#include <functional>
+#include <numeric>
+#include <utility>
+#include <sstream>
+#include <iostream>
+#include <iomanip>
+#include <cstdio>
+#include <cmath>
+#include <cstdlib>
+#include <cctype>
+#include <string>
+#include <cstring>
+#include <ctime>
+#include <queue>
+#include <climits>
 
 using namespace std;
 
@@ -25,9 +47,12 @@ const double PI  = acos(-1.0);
 
 int cmp(double x, double y = 0, double tol = EPS) {
     return (x <= y + tol) ? (x + tol < y) ? -1 : 0 : 1;
+}
 
 int main(){
-       	ios_base::sync_with_stdio(0);
+       	//ios_base::sync_with_stdio(0);
+       	//cin.tie(0);
+		
 
         return 0;
 }
