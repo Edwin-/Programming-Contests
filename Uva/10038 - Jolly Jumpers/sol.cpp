@@ -3,7 +3,6 @@
  * Judge: 	UVa online-judge 
  * Problem:	10038 - Jolly Jumpers
  *****************************************************************************/
-
 #include <vector>
 #include <list>
 #include <map>
@@ -49,8 +48,6 @@ int cmp(double x, double y = 0, double tol = EPS) {
 }
 
 int main(){
-       	//ios_base::sync_with_stdio(0);
-       	//cin.tie(0);
 
 		int N; 
 		int sequence[3001], jollyJumper[3001];
@@ -89,19 +86,3 @@ int main(){
 
         return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
