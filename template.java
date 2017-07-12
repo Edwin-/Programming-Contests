@@ -48,6 +48,7 @@ public class template {
     }
 
     static class FastScanner {
+        
         public BufferedReader br;
         public StringTokenizer st;
         
