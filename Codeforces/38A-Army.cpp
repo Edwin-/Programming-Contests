@@ -1,9 +1,9 @@
-
 /******************************************************************************
  * Autor :  Edwin Payrumani Mamani
  * Judge:   Codeforces
- * Problem: A. Next Round||  VK Cup 2012 Qualification Round 
+ * Problem: A. Army || Codeforces Beta Round #38 
  *****************************************************************************/
+
 #include <vector>
 #include <list>
 #include <map>
@@ -48,27 +48,33 @@ int cmp(double x, double y = 0, double tol = EPS) {
     return (x <= y + tol) ? (x + tol < y) ? -1 : 0 : 1;
 }
 
-using namespace std;
-void carga( int c[128], int n){
-   for(int i=0;i<n;i++){
-      cin>>c[i];
-   }
+int main(){
+       	//ios_base::sync_with_stdio(0);
+       	//cin.tie(0);
+		int n, a , b;
+		int d[101];
 
+		scanf("%d",&n);
+		for (int i = 0; i < (n - 1); i++){	
+			scanf("%d",&d[i]);
+		}
+		scanf("%d%d",&a,&b);
+
+		int sum = 0;
+
+		for(int i = 0; i < (n - 1); i++){
+			
+			if( (i >= (a-1) ) && (i < (b - 1)) ) sum = sum + d[i];	
+
+		}
+
+		printf("%d\n",sum);
+        return 0;
 }
-int main() {
-int n, k;
-int Paseronda = 0;
 
-int p[128];
-	scanf("%d%d", &n, &k);
-	k--;
-	carga(p,n);
 
-	for (int i = 0; i<n; i++)
-		if (p[i] > 0 && p[i]>=p[k])
-			Paseronda++;
 
-	printf("%d",Paseronda);
-	return 0;
-}
+
+
+
 

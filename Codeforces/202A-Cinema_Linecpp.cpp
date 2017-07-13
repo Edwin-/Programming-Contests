@@ -1,9 +1,9 @@
-
 /******************************************************************************
  * Autor :  Edwin Payrumani Mamani
  * Judge:   Codeforces
- * Problem: A. Next Round||  VK Cup 2012 Qualification Round 
+ * Problem: A. Cinema Line || Codeforces Round #202 (Div. 2)
  *****************************************************************************/
+
 #include <vector>
 #include <list>
 #include <map>
@@ -48,27 +48,40 @@ int cmp(double x, double y = 0, double tol = EPS) {
     return (x <= y + tol) ? (x + tol < y) ? -1 : 0 : 1;
 }
 
-using namespace std;
-void carga( int c[128], int n){
-   for(int i=0;i<n;i++){
-      cin>>c[i];
-   }
+int main(){
 
+		int n, money; int flag = 1;	
+		int cost = 25; int cost_25 = 25; int cost_50 = 50; int cost_100= 100;	
+		map<int, int> residue;
+
+		scanf("%d",&n);
+
+		for (int i = 0; i < n; i++){
+
+			scanf("%d",&money);
+			
+			if(money == cost_25) residue[cost_25]++;		
+			if(money == cost_50){
+					residue[cost_50]++;
+					residue[cost_25]--;
+			}else if(money == cost_100){			
+				if(residue[cost_50] > 0){
+					residue[cost_100]++; // not necessary
+					residue[cost_25]--;
+					residue[cost_50]--;
+				}else{
+					residue[cost_25]--;
+					residue[cost_25]--;
+					residue[cost_25]--;
+				}				
+			}
+
+		if(residue[cost_25] < 0 || residue[cost_50] < 0 ) {
+			flag = 0;
+		}
+	}
+		if(flag == 1)printf("%s\n", "YES");
+		else printf("%s\n","NO");
+        
+        return 0;
 }
-int main() {
-int n, k;
-int Paseronda = 0;
-
-int p[128];
-	scanf("%d%d", &n, &k);
-	k--;
-	carga(p,n);
-
-	for (int i = 0; i<n; i++)
-		if (p[i] > 0 && p[i]>=p[k])
-			Paseronda++;
-
-	printf("%d",Paseronda);
-	return 0;
-}
-
